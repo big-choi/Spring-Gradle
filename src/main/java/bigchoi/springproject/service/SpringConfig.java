@@ -1,6 +1,7 @@
 package bigchoi.springproject.service;
 
 import bigchoi.springproject.repository.JdbcMemberRepository;
+import bigchoi.springproject.repository.JdbcTemplateMemberRepository;
 import bigchoi.springproject.repository.MemberRepository;
 import bigchoi.springproject.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,7 @@ public class SpringConfig {
     public MemberRepository memberRepository(){
 
         //return new MemoryMemberRepository();
-        return new JdbcMemberRepository(dataSource);
+        // return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 }
